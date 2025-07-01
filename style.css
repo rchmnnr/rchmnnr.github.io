@@ -1,0 +1,71 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+
+#main-title a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 1em;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Responsive columns */
+    grid-gap: 1em;
+}
+
+.grid-item {
+    background-color: #ddd;
+    border-radius: 8px;
+    padding: 1em;
+    text-align: center;
+    height: 150px; /* Fixed height for uniformity */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: #555;
+}
+
+/* Asymmetric layout - Angklungmann takes double height */
+#angklungmann-link {
+    grid-row: span 2; /* Make the first item span two rows */
+}
+
+/* Mobile-first optimization */
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: repeat(1, 1fr); /* Single column on small screens */
+    }
+
+    #angklungmann-link {
+        grid-row: auto; /* Reset row span on small screens */
+    }
+
+    .grid-item {
+        height: 100px; /* Adjust height for smaller screens */
+    }
+}
+
+footer {
+    text-align: center;
+    padding: 1em;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
